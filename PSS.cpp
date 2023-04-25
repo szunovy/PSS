@@ -15,25 +15,124 @@
 #include <fstream>
 #include<string>
 #include <cstring>
+
 using namespace std;
 
-const int INPUT_PARAMS_LINE_LENGTH = 30;
+const int INPUT_PARAMS_MAX_LENGTH = 30;
 
 int main()
 {
 	srand(time(NULL));
 
-	int degA = 2, degB = 2, degk = 0;
+	int degA, degB, degk;
 	double x, y;
- 
+	double* Abuffer = new double[INPUT_PARAMS_MAX_LENGTH];
+	double* Bbuffer = new double[INPUT_PARAMS_MAX_LENGTH];
 
 	//cout << "Set nA, nB and k parameters" << endl;
 	//cin >> nA, nB, k;
-
-	double A[2] = { 1, 5 }, B[2] = { 7, 3 };
-
+	//double A[2] = { 1, 5 }, B[2] = { 7, 3 };
 	//cout << "Set A and B" << endl;
 	//cin >> A, B;
+
+	//creating object that obtains data from file
+	ifstream input_file("data\\input_parameters.txt");
+
+	//strings for parameters sets
+	string line_pA;
+	string line_pB;
+	string line_pk;
+	int lineno = 0; //variable indicating number of current loaded line
+
+
+	
+	//obtaining three groups of parameters separated with semicolon (A;B;nk)
+	//getting params from txt file line by line until getting desired model number, each line is a new model
+	//params sets are separated by semicolon, and each parameter is separated by whitespace
+	//e.g 
+	//a1 a2 a3 ...;b0 b1 b2 b3 ...;nk	    //[model no.1]
+	//a1 a2 a3...;b0 b1 b2 b3...;nk     	//[model no.2]
+	//... etc.
+	while(getline(input_file, line_pA, ';') && std::getline(input_file, line_pB, ';') && std::getline(input_file, line_pk, ';'))
+	{
+		int chosen_model_number = 1;  //number of chosen model (meaning the line in txt file)
+		lineno++;  //counting lines to choose model
+
+
+		//data obtained from desired model
+		if (lineno == chosen_model_number)
+		{
+			degk = stoi(line_pk);
+			degA = 0;
+			degB = 0;
+			double* tempA = new double[line_pA.length()];
+			double* tempB = new double[line_pB.length()];
+
+			char* params_A_array = new char[line_pA.length() + 1];
+			strcpy(params_A_array, line_pA.c_str());
+			char* p = strtok(params_A_array, " ");
+			while (p != NULL)
+			{
+				tempA[degA] = stod(p);
+				cout << p << endl;
+				p = strtok(NULL, " ");
+				degA++;
+			}
+			delete[] params_A_array;
+
+			char* params_B_array = new char[line_pB.length() + 1];
+			strcpy(params_B_array, line_pB.c_str());
+			p = strtok(params_B_array, " ");
+			while (p != NULL)
+			{
+				tempB[degB] = stod(p);
+				degB++;
+				p = strtok(NULL, " ");
+			}
+
+			double* A = new double[degA];
+			double* B = new double[degB];
+			copy(tempA, tempA + degA, Abuffer);
+			copy(tempB, tempB + degB, Bbuffer);
+
+
+			delete[] params_B_array;
+			delete[] tempA;
+			delete[] tempB;
+			break;
+		}
+		//	//cout << "set_no " << param_set_number << endl;
+		//	cout << p << endl;
+		//	if(param_set_number == 1) 
+		//	{
+		//		cout << "paramA" <<endl;
+		//	}
+		//	if(param_set_number == 2)
+		//	{
+		//		cout << "paramB" << endl;
+		//	}
+		//	//cout <<"sizeof line "<< sizeof( p) << endl;
+		//	
+		//	//obtaining each parameter
+		//	//char* parameter_from_line = strtok(p, " ");
+		//	//while (parameter_from_line != NULL)
+		//	//{
+		//	//	//string final_parameter(parameter_from_line);
+		//	//	cout << stod(parameter_from_line) << endl;
+		//	//	parameter_from_line = strtok(NULL, " ");
+		//	//}
+		//	param_set_number+=1;
+		//	//cout << "set2no " << param_set_number << endl;
+		//}
+		//delete[] line_array;
+	}
+	//cout << "B[1] " << B[1];
+	input_file.close();
+
+	double* A = new double[degA];
+	double* B = new double[degB];
+	copy(Abuffer, Abuffer + degA, A);
+	copy(Bbuffer, Bbuffer + degB, B);
 
 	Arx modelArx(degA, degB, degk);
 
@@ -42,58 +141,20 @@ int main()
 	double output = 0;
 	int simTime = 0;
 	int stopTime = 20;
-	//while (simTime<stopTime)
+	while (simTime<stopTime)
 	//while(1)
-	//{
-	//	//x = rand() % 5;
-	//	x = 3;
-	//	output = modelArx.simulate(x);
-	//	cout << output;
-	//	cout << endl;
-	//	simTime++;
-	//}
-	ifstream input_file("data\\input_parameters.txt");
-	//input_file.open;
-	string parameters_file_line;
-	int lineno = 0;
-	//getting params from txt file line by line until, each line is a new model
-	//params sets are separated by semicolon, and each parameter is separated by whitespace
-	//e.g 
-	//a1 a2 a3 ...;b0 b1 b2 b3 ...	    //[model no.1]
-	//a1 a2 a3...;b0 b1 b2 b3...		//[model no.2]
-	//... etc.
-	while(getline(input_file, parameters_file_line)) 
 	{
-		lineno++;  //counting lines to choose model
-		char* line_array = new char[parameters_file_line.length() + 1];
-		strcpy(line_array, parameters_file_line.c_str());
-		//cout << parameters_file_line<<endl;
-
-		//obtaining parameters sets (Arx: A and B) from line by semicolon separator
-		char* p = strtok(line_array, ";");
-		while (p != NULL)
-		{
-			cout <<"sizeof line "<< sizeof( p) << endl;
-			
-			//obtaining each parameter
-			char* parameter_from_line = strtok(p, " ");
-			cout << "parametry z jednej lini" << endl;
-			while (parameter_from_line != NULL)
-			{
-				//string final_parameter(parameter_from_line);
-				cout << stod(parameter_from_line) << endl;
-				parameter_from_line = strtok(NULL, " ");
-			}
-
-			p = strtok(NULL, ";");
-		}
-		delete[] line_array;
+		//x = rand() % 5;
+		x = 3;
+		output = modelArx.simulate(x);
+		cout << output;
+		cout << endl;
+		simTime++;
 	}
-
-	input_file.close();
-
-
-
+	delete[] Abuffer;
+	delete[] Bbuffer;
+	delete[] A;
+	delete[] B;
 	return 0;
 }
 
