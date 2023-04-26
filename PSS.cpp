@@ -3,7 +3,6 @@
 //TODO change later to strtok_s
 #define _CRT_SECURE_NO_WARNINGS
 
-
 #include "Siso.h"
 #include "Arx.h"
 #include "Regulator.h"
@@ -15,6 +14,7 @@
 #include <fstream>
 #include<string>
 #include <cstring>
+#include <chrono>
 
 using namespace std;
 
@@ -74,7 +74,7 @@ int main()
 			while (p != NULL)
 			{
 				tempA[degA] = stod(p);
-				cout << p << endl;
+				//cout << p << endl;
 				p = strtok(NULL, " ");
 				degA++;
 			}
@@ -85,13 +85,14 @@ int main()
 			p = strtok(params_B_array, " ");
 			while (p != NULL)
 			{
-				tempB[degB] = stod(p);
+				tempB[degB] = stod(p);  //local array
+				//Bbuffer[degB] = stod(p); //array outside function
 				degB++;
 				p = strtok(NULL, " ");
 			}
 
-			double* A = new double[degA];
-			double* B = new double[degB];
+			//double* A = new double[degA];
+			//double* B = new double[degB];
 			copy(tempA, tempA + degA, Abuffer);
 			copy(tempB, tempB + degB, Bbuffer);
 
@@ -141,20 +142,30 @@ int main()
 	double output = 0;
 	int simTime = 0;
 	int stopTime = 20;
+
+	//creating file for saving results
+	ofstream output_file("data\\result.txt");
+
 	while (simTime<stopTime)
 	//while(1)
 	{
 		//x = rand() % 5;
 		x = 3;
 		output = modelArx.simulate(x);
-		cout << output;
-		cout << endl;
+		cout << output << endl;
+		output_file << x << ";" << output << endl;
+
+		//cout << output;
+		//cout << endl;
 		simTime++;
 	}
+
+	//freeing memory and closing files
 	delete[] Abuffer;
 	delete[] Bbuffer;
 	delete[] A;
 	delete[] B;
+	output_file.close();
 	return 0;
 }
 
