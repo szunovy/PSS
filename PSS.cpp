@@ -26,8 +26,8 @@ int main()
 
 	int degA, degB, degk;
 	double x, y;
-	double* Abuffer = new double[INPUT_PARAMS_MAX_LENGTH];
-	double* Bbuffer = new double[INPUT_PARAMS_MAX_LENGTH];
+	vector< double > A; 
+	vector< double > B;
 
 	//cout << "Set nA, nB and k parameters" << endl;
 	//cin >> nA, nB, k;
@@ -65,15 +65,14 @@ int main()
 			degk = stoi(line_pk);
 			degA = 0;
 			degB = 0;
-			double* tempA = new double[line_pA.length()];
-			double* tempB = new double[line_pB.length()];
 
 			char* params_A_array = new char[line_pA.length() + 1];
 			strcpy(params_A_array, line_pA.c_str());
 			char* p = strtok(params_A_array, " ");
 			while (p != NULL)
 			{
-				tempA[degA] = stod(p);
+				//tempA[degA] = stod(p);
+				A.push_back(stod(p));
 				//cout << p << endl;
 				p = strtok(NULL, " ");
 				degA++;
@@ -85,21 +84,23 @@ int main()
 			p = strtok(params_B_array, " ");
 			while (p != NULL)
 			{
-				tempB[degB] = stod(p);  //local array
+				//tempB[degB] = stod(p);  //local array
+				B.push_back(stod(p));
 				//Bbuffer[degB] = stod(p); //array outside function
 				degB++;
 				p = strtok(NULL, " ");
 			}
 
-			//double* A = new double[degA];
-			//double* B = new double[degB];
-			copy(tempA, tempA + degA, Abuffer);
-			copy(tempB, tempB + degB, Bbuffer);
+
+			//copy(tempA, tempA + degA, Abuffer);
+			//copy(tempB, tempB + degB, Bbuffer);
 
 
-			delete[] params_B_array;
-			delete[] tempA;
-			delete[] tempB;
+			//copy(tempA, tempA + degA, back_inserter(A2));
+			//copy(tempB, tempB + degB, back_inserter(B2));
+
+
+
 			break;
 		}
 		//	//cout << "set_no " << param_set_number << endl;
@@ -129,11 +130,15 @@ int main()
 	}
 	//cout << "B[1] " << B[1];
 	input_file.close();
+	//double* A = new double[degA];
+	//double* B = new double[degB];
+	//copy(Abuffer, Abuffer + degA, A);
+	//copy(Bbuffer, Bbuffer + degB, B);
 
-	double* A = new double[degA];
-	double* B = new double[degB];
-	copy(Abuffer, Abuffer + degA, A);
-	copy(Bbuffer, Bbuffer + degB, B);
+
+	//vector< double > A2(Abuffer, Abuffer + degA);
+	//vector< double > B2(Bbuffer, Bbuffer + degB);
+
 
 	Arx modelArx(degA, degB, degk);
 
@@ -161,10 +166,6 @@ int main()
 	}
 
 	//freeing memory and closing files
-	delete[] Abuffer;
-	delete[] Bbuffer;
-	delete[] A;
-	delete[] B;
 	output_file.close();
 	return 0;
 }

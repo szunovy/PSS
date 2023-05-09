@@ -4,70 +4,103 @@
 #include <iomanip>
 #include <stdlib.h>
 #include <time.h>
+#include <vector>
 using namespace std;
 
+/// Class of ArX model. 
+///
+/// Class for creating arx models of objects.
 class Arx : Siso {
 
 public:
 	Arx(int ndA, int ndB, int nk);
 	~Arx();
-	void setParameters(double* A, double* B);
+	void setParameters(vector<double> A, vector<double> B);
 	double simulate(double input);
 
 protected:
 	//double output;
 	//double input;
 	//double noise;
-	int dA, dB, k;
-private:
-	double* inputBuffer, * outputBuffer;
-	double* paramA, * paramB;
+	int dA;	///< order of polynomial A
+	int dB; ///< order of polynomial B
+	int k;  ///< input output delay
 
+private:
+	vector< double > paramA; ///< vector of parameters of polynomial A
+	vector< double > paramB; ///< vector of parameters of polynomial B
+	vector< double > inputBuffer; ///< buffer for input values, for simulation purposes
+	vector< double > outputBuffer; ///< buffer for output values, for simulation purposes
 };
 
 //creating arrays of given size while initializing an object and filling them with zeroes
+
+/// <summary>
+/// Constructor of Arx class
+/// </summary>
+/// <param name="ndA">Order of polynomial A</param>
+/// <param name="ndB">Order of polynomial B</param>
+/// <param name="nk">input-output delay</param>
 Arx::Arx(int ndA, int ndB, int nk)
 {
 	dA = ndA;
 	dB = ndB;
 	k = nk;
-	paramA = new double[ndA];
-	paramB = new double[ndB];
-	inputBuffer = new double[ndB + nk];
-	outputBuffer = new double[ndA];
+	paramA.resize(ndA);
+	paramB.resize(ndB);
+	inputBuffer.resize(ndB + nk);
+	outputBuffer.resize(ndA);
+	
+	//paramA2 = new double[ndA];
+	//paramB2 = new double[ndB];
+	//inputBuffer2 = new double[ndB + nk];
+	//outputBuffer2 = new double[ndA];
 
-	fill_n(paramA, ndA, 0);
-	fill_n(paramB, ndB, 0);
-	fill_n(inputBuffer, ndB + nk, 0);
-	fill_n(outputBuffer, ndA, 0);
+	//fill_n(paramA, ndA, 0);
+	//fill_n(paramB, ndB, 0);
+	//fill_n(inputBuffer, ndB + nk, 0);
+	//fill_n(outputBuffer, ndA, 0);
 }
 
 Arx::~Arx() {
-	delete[] paramA;
-	delete[] paramB;
-	delete[] inputBuffer;
-	delete[] outputBuffer;
+	//delete[] paramA;
+	//delete[] paramB;
+	//delete[] inputBuffer;
+	//delete[] outputBuffer;+
 }
-void Arx::setParameters(double* A, double* B)
+
+/// <summary>
+/// Set values of models parameters. 
+/// </summary>
+/// <param name="A">vector of parameters A</param>
+/// <param name="B">vector of parameters B</param>
+/// @returns nothing
+void Arx::setParameters(vector<double> A, vector<double> B)
 {
-	//paramA = A;
-	//paramB = B;
-
-	for (int i = 0; i < dA; i++)
-	{
-		paramA[i] = A[i];
-	}
-	for (int i = 0; i < dB; i++)
-	{
-		paramB[i] = B[i];
-	}
-
+	paramA = A;
+	paramB = B;
+	
+	//for (int i = 0; i < A.size(); i++)
+	//	paramA.push_back(A[i]);
+	//for (int i = 0; i < A.size(); i++)
+	//	paramB.push_back(B[i]);
 }
 
 // copying parameters
 
 
-//y(i) = u(i) * (b0 + b1*z^(-1) + ... + bdB*z^(-dB)) * z^(-k) + e - y(i) * (a1*z^(-1) + ... + adA*z^(-dA))
+
+
+
+/// <summary>
+/// Simulating output of the Arx model. 
+/// 
+/// Formula for the output **y** in the moment **i**:
+/// [ y(i) = u(i) * (b0 + b1*z^(-1) + ... + bdB*z^(-dB)) * z^(-k) + e - y(i) * (a1*z^(-1) + ... + adA*z^(-dA)) ]
+/// where **a** and **b** are parameters of the polynomial A and B
+/// </summary>
+/// <param name="input"> Input to the model <double> </param>
+/// <returns>Output of the model <doublel> </returns>
 double Arx::simulate(double input)
 {
 	double output = 0;
@@ -91,7 +124,6 @@ double Arx::simulate(double input)
 	{
 		output -= outputBuffer[i] * paramA[i];
 		outputBuffer[i] = outputBuffer[i - 1];
-
 	}
 	//add noise to the signal
 	//output += rand() % 3;

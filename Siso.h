@@ -1,6 +1,11 @@
+/// <summary>
+/// Siso class, a parent for other objects
+/// </summary>
 class Siso {
 public:
-	//method to iterate simulation
+	/// <summary>
+	/// Method to iterate simulation in object.
+	/// </summary>
 	void Simulate();
 };
 #pragma once
