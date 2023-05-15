@@ -12,13 +12,28 @@
 #include <stdlib.h>
 #include <time.h>
 #include <fstream>
-#include<string>
+#include <string>
 #include <cstring>
 #include <chrono>
+#include <format>
 
 using namespace std;
 
 const int INPUT_PARAMS_MAX_LENGTH = 30;
+const int OBJECT_OUTPUT_LIMIT = 1000000;
+
+class UnstableObj{
+	const char* name;
+public:
+	UnstableObj(const char* n = 0) : name(n) {}
+};
+
+class DelayZero{
+	const char* name;
+public:
+	DelayZero(const char* n = 0) : name(n) {}
+};
+
 
 int main()
 {
@@ -53,92 +68,60 @@ int main()
 	//a1 a2 a3 ...;b0 b1 b2 b3 ...;nk	    //[model no.1]
 	//a1 a2 a3...;b0 b1 b2 b3...;nk     	//[model no.2]
 	//... etc.
-	while(getline(input_file, line_pA, ';') && std::getline(input_file, line_pB, ';') && std::getline(input_file, line_pk, ';'))
-	{
-		int chosen_model_number = 1;  //number of chosen model (meaning the line in txt file)
-		lineno++;  //counting lines to choose model
-
-
-		//data obtained from desired model
-		if (lineno == chosen_model_number)
+	try {
+		while (getline(input_file, line_pA, ';') && std::getline(input_file, line_pB, ';') && std::getline(input_file, line_pk, '\n'))
 		{
-			degk = stoi(line_pk);
-			degA = 0;
-			degB = 0;
+			int chosen_model_number = 1;  //number of chosen model (meaning the line in txt file)
+			lineno++;  //counting lines to choose model
 
-			char* params_A_array = new char[line_pA.length() + 1];
-			strcpy(params_A_array, line_pA.c_str());
-			char* p = strtok(params_A_array, " ");
-			while (p != NULL)
+
+			//data obtained from desired model
+			if (lineno == chosen_model_number)
 			{
-				//tempA[degA] = stod(p);
-				A.push_back(stod(p));
-				//cout << p << endl;
-				p = strtok(NULL, " ");
-				degA++;
+				degk = stoi(line_pk);
+				degA = 0;
+				degB = 0;
+
+				char* params_A_array = new char[line_pA.length() + 1];
+				strcpy(params_A_array, line_pA.c_str());
+				char* p = strtok(params_A_array, " ");
+				while (p != NULL)
+				{
+					//tempA[degA] = stod(p);
+					A.push_back(stod(p));
+					//cout << p << endl;
+					p = strtok(NULL, " ");
+					degA++;
+				}
+				delete[] params_A_array;
+
+				char* params_B_array = new char[line_pB.length() + 1];
+				strcpy(params_B_array, line_pB.c_str());
+				p = strtok(params_B_array, " ");
+				while (p != NULL)
+				{
+					//tempB[degB] = stod(p);  //local array
+					B.push_back(stod(p));
+					//Bbuffer[degB] = stod(p); //array outside function
+					degB++;
+					p = strtok(NULL, " ");
+				}
+				break;
 			}
-			delete[] params_A_array;
 
-			char* params_B_array = new char[line_pB.length() + 1];
-			strcpy(params_B_array, line_pB.c_str());
-			p = strtok(params_B_array, " ");
-			while (p != NULL)
-			{
-				//tempB[degB] = stod(p);  //local array
-				B.push_back(stod(p));
-				//Bbuffer[degB] = stod(p); //array outside function
-				degB++;
-				p = strtok(NULL, " ");
-			}
-
-
-			//copy(tempA, tempA + degA, Abuffer);
-			//copy(tempB, tempB + degB, Bbuffer);
-
-
-			//copy(tempA, tempA + degA, back_inserter(A2));
-			//copy(tempB, tempB + degB, back_inserter(B2));
-
-
-
-			break;
 		}
-		//	//cout << "set_no " << param_set_number << endl;
-		//	cout << p << endl;
-		//	if(param_set_number == 1) 
-		//	{
-		//		cout << "paramA" <<endl;
-		//	}
-		//	if(param_set_number == 2)
-		//	{
-		//		cout << "paramB" << endl;
-		//	}
-		//	//cout <<"sizeof line "<< sizeof( p) << endl;
-		//	
-		//	//obtaining each parameter
-		//	//char* parameter_from_line = strtok(p, " ");
-		//	//while (parameter_from_line != NULL)
-		//	//{
-		//	//	//string final_parameter(parameter_from_line);
-		//	//	cout << stod(parameter_from_line) << endl;
-		//	//	parameter_from_line = strtok(NULL, " ");
-		//	//}
-		//	param_set_number+=1;
-		//	//cout << "set2no " << param_set_number << endl;
-		//}
-		//delete[] line_array;
+		if (degk == 0) { throw DelayZero("Delay shouldn't be 0"); }
+	}
+	catch(DelayZero) {
+		cout << "Delay shouldn't be 0, set by default to 1" << endl;
+		degk = 1;
+	}
+	catch(invalid_argument) {
+		cout << "Wrong input parameters" << endl;
+		return 0;
 	}
 	//cout << "B[1] " << B[1];
 	input_file.close();
-	//double* A = new double[degA];
-	//double* B = new double[degB];
-	//copy(Abuffer, Abuffer + degA, A);
-	//copy(Bbuffer, Bbuffer + degB, B);
-
-
-	//vector< double > A2(Abuffer, Abuffer + degA);
-	//vector< double > B2(Bbuffer, Bbuffer + degB);
-
 
 	Arx modelArx(degA, degB, degk);
 
@@ -149,16 +132,41 @@ int main()
 	int stopTime = 20;
 
 	//creating file for saving results
-	ofstream output_file("data\\result.txt");
+
+
+	
+	time_t rawtime;
+	struct tm* timeinfo;
+	char buffer[80];
+
+	time(&rawtime);
+	timeinfo = localtime(&rawtime);
+
+	strftime(buffer, 80, "data//results//%Y.%m.%d_%H.%M.%S.txt", timeinfo);
+	//cout<<buffer<<endl;
+
+	//cout << strftime("%Y-%m-%dT%H-%M-%S.txt", timeinfo) << endl;
+
+	ofstream output_file(buffer);
 
 	while (simTime<stopTime)
 	//while(1)
 	{
 		//x = rand() % 5;
 		x = 3;
-		output = modelArx.simulate(x);
-		cout << output << endl;
-		output_file << x << ";" << output << endl;
+		try 
+		{
+			output = modelArx.simulate(x);
+			if (abs(output) > OBJECT_OUTPUT_LIMIT) { throw UnstableObj("Object unstable, output values exceeded limit."); }
+		}
+		catch(UnstableObj)
+		{
+			//printing message and stopping the simulation
+			cout << "Object unstable, output values exceeded limit." << endl;
+			output_file << "Object unstable, output values exceeded limit." << endl;
+			break;
+		}
+		output_file << output << endl;
 
 		//cout << output;
 		//cout << endl;
@@ -170,13 +178,3 @@ int main()
 	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
