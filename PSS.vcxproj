@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arx.h" />
+    <ClInclude Include="controllerP.h" />
     <ClInclude Include="Regulator.h" />
     <ClInclude Include="Siso.h" />
   </ItemGroup>

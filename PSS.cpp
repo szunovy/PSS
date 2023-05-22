@@ -6,6 +6,8 @@
 #include "Siso.h"
 #include "Arx.h"
 #include "Regulator.h"
+#include "Generator.h"
+#include "controllerP.h"
 
 #include <iostream>
 #include <iomanip>
@@ -133,43 +135,43 @@ int main()
 
 	//creating file for saving results
 
-
-	
 	time_t rawtime;
 	struct tm* timeinfo;
 	char buffer[80];
-
 	time(&rawtime);
 	timeinfo = localtime(&rawtime);
-
 	strftime(buffer, 80, "data//results//%Y.%m.%d_%H.%M.%S.txt", timeinfo);
 	//cout<<buffer<<endl;
-
 	//cout << strftime("%Y-%m-%dT%H-%M-%S.txt", timeinfo) << endl;
 
 	ofstream output_file(buffer);
 
-	while (simTime<stopTime)
+	Generator generator("noise", 1 , 1);
+
+	while (1)
 	//while(1)
 	{
-		//x = rand() % 5;
-		x = 3;
-		try 
-		{
-			output = modelArx.simulate(x);
-			if (abs(output) > OBJECT_OUTPUT_LIMIT) { throw UnstableObj("Object unstable, output values exceeded limit."); }
-		}
-		catch(UnstableObj)
-		{
-			//printing message and stopping the simulation
-			cout << "Object unstable, output values exceeded limit." << endl;
-			output_file << "Object unstable, output values exceeded limit." << endl;
-			break;
-		}
-		output_file << output << endl;
+		////x = rand() % 5;
+		//x = 3;
+		//try 
+		//{
+		//	output = modelArx.simulate(x);
+		//	if (abs(output) > OBJECT_OUTPUT_LIMIT) { throw UnstableObj("Object unstable, output values exceeded limit."); }
+		//}
+		//catch(UnstableObj)
+		//{
+		//	//printing message and stopping the simulation
+		//	cout << "Object unstable, output values exceeded limit." << endl;
+		//	output_file << "Object unstable, output values exceeded limit." << endl;
+		//	break;
+		//}
+		//output_file << output << endl;
 
-		//cout << output;
-		//cout << endl;
+		////cout << output;
+		////cout << endl;
+
+
+		cout << generator.generate() << endl;
 		simTime++;
 	}
 
