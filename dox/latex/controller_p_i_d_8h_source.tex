@@ -1,0 +1,40 @@
+\hypertarget{controller_p_i_d_8h_source}{}\doxysection{controller\+PID.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Regulator.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Siso.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//srand(time(NULL));}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcontroller_p_i_d}{controllerPID}}\ :\ \mbox{\hyperlink{class_regulator}{Regulator}}\ \{}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classcontroller_p_i_d}{controllerPID}}(\textcolor{keywordtype}{double}\ nP,\ \textcolor{keywordtype}{double}\ nI,\ \textcolor{keywordtype}{double}\ nD);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classcontroller_p_i_d}{\string~controllerPID}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_ab3e3d9e695a5e95276c91d4e867292d0}{simulate}}(\textcolor{keywordtype}{double}\ input);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_a64d09815bd3713d283935d3d92296d7e}{output}}\ =\ 0;\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_a9fc59df4c3866c2dee479c8ee72998c7}{P}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_a96909891a78814d855a7d35dd155aaea}{I}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_aac622130c84399e277dd970f80c53bdb}{D}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_ad4cd46917c38062f05f09ab6f312c0ec}{integral}}\ =\ 0;\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_a8a76d8e967e9db4e805d52336b8de848}{derivative}}\ =\ 0;\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_aacbe9a92bd91f12c0811f59200a79be3}{dt}}\ =\ 0.01;\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classcontroller_p_i_d_a6e637666363ade39ee231dd98466f004}{prevError}}\ =\ 0;\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ MAX\ =\ 1000000;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ MIN\ =\ -\/1000000;}
+\DoxyCodeLine{00051\ \};}
+
+\end{DoxyCode}

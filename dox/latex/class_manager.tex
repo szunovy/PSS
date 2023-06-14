@@ -1,0 +1,118 @@
+\hypertarget{class_manager}{}\doxysection{Manager Class Reference}
+\label{class_manager}\index{Manager@{Manager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_manager_a1658ff9f18e38ccd9cb8b0b371b9c20b}\label{class_manager_a1658ff9f18e38ccd9cb8b0b371b9c20b}} 
+{\bfseries Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Creates file for saving results. Default path is \textbackslash{}results\textbackslash{}\textquotesingle{}current date and time.\+txt\textquotesingle{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_manager_ac0035f7075f38c253cb59ec33d6be8ff}{Read\+Parameters\+File}} (int model\+Number)
+\begin{DoxyCompactList}\small\item\em Reads chosen parameters of ARX object from file. \end{DoxyCompactList}\item 
+tuple$<$ int, int, int $>$ \mbox{\hyperlink{class_manager_a889d9799cfd44a7823922285b2725523}{get\+Degrees}} ()
+\begin{DoxyCompactList}\small\item\em Returns tuple of degrees of ARX parameters in given form (degA, degB, degk). \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_manager_aaa8ead650614de22bf5c1a092b65dd9a}{getA}} ()
+\begin{DoxyCompactList}\small\item\em Returns vector of parameters A. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \mbox{\hyperlink{class_manager_ab484e135d98904b0ab40353cf5502f4f}{getB}} ()
+\begin{DoxyCompactList}\small\item\em Returns vector of parameters B. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manager_afc8026640f0fbd1505118f52d29d35c9}{Save\+To\+File}} (string message)
+\begin{DoxyCompactList}\small\item\em Saves text message to results file. Default path is \textbackslash{}results\textbackslash{}\textquotesingle{}current date and time.\+txt\textquotesingle{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_manager_ab6b271bf0c649c672607e9d53e4d1e02}{Save\+To\+File}} (double value)
+\begin{DoxyCompactList}\small\item\em Saves value to results file. Default path is \textbackslash{}results\textbackslash{}\textquotesingle{}current date and time.\+txt\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_manager_aaa8ead650614de22bf5c1a092b65dd9a}\label{class_manager_aaa8ead650614de22bf5c1a092b65dd9a}} 
+\index{Manager@{Manager}!getA@{getA}}
+\index{getA@{getA}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{getA()}{getA()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Manager\+::getA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns vector of parameters A. 
+
+\begin{DoxyReturn}{Returns}
+vector of parameters A
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_manager_ab484e135d98904b0ab40353cf5502f4f}\label{class_manager_ab484e135d98904b0ab40353cf5502f4f}} 
+\index{Manager@{Manager}!getB@{getB}}
+\index{getB@{getB}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{getB()}{getB()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Manager\+::getB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns vector of parameters B. 
+
+\begin{DoxyReturn}{Returns}
+vector of parameters B
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_manager_a889d9799cfd44a7823922285b2725523}\label{class_manager_a889d9799cfd44a7823922285b2725523}} 
+\index{Manager@{Manager}!getDegrees@{getDegrees}}
+\index{getDegrees@{getDegrees}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{getDegrees()}{getDegrees()}}
+{\footnotesize\ttfamily tuple$<$ int, int, int $>$ Manager\+::get\+Degrees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns tuple of degrees of ARX parameters in given form (degA, degB, degk). 
+
+\begin{DoxyReturn}{Returns}
+tuple of degrees of parameters (degA, degB, degk)
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_manager_ac0035f7075f38c253cb59ec33d6be8ff}\label{class_manager_ac0035f7075f38c253cb59ec33d6be8ff}} 
+\index{Manager@{Manager}!ReadParametersFile@{ReadParametersFile}}
+\index{ReadParametersFile@{ReadParametersFile}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{ReadParametersFile()}{ReadParametersFile()}}
+{\footnotesize\ttfamily int Manager\+::\+Read\+Parameters\+File (\begin{DoxyParamCaption}\item[{int}]{model\+Number }\end{DoxyParamCaption})}
+
+
+
+Reads chosen parameters of ARX object from file. 
+
+Obtains chosen three groups of parameters separated with semicolon (A;B;nk) User specifies number of desired model, each model is placed in a new line. Params sets are separated by semicolon, and each parameter is separated by whitespace.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Number} & Number of chosen model from file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if everything worked correctly, 0 if some error occured
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_manager_ab6b271bf0c649c672607e9d53e4d1e02}\label{class_manager_ab6b271bf0c649c672607e9d53e4d1e02}} 
+\index{Manager@{Manager}!SaveToFile@{SaveToFile}}
+\index{SaveToFile@{SaveToFile}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{SaveToFile()}{SaveToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Manager\+::\+Save\+To\+File (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Saves value to results file. Default path is \textbackslash{}results\textbackslash{}\textquotesingle{}current date and time.\+txt\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to be saved to file\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_manager_afc8026640f0fbd1505118f52d29d35c9}\label{class_manager_afc8026640f0fbd1505118f52d29d35c9}} 
+\index{Manager@{Manager}!SaveToFile@{SaveToFile}}
+\index{SaveToFile@{SaveToFile}!Manager@{Manager}}
+\doxysubsubsection{\texorpdfstring{SaveToFile()}{SaveToFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Manager\+::\+Save\+To\+File (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+
+
+Saves text message to results file. Default path is \textbackslash{}results\textbackslash{}\textquotesingle{}current date and time.\+txt\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Text to be saved to file\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Manager.\+h\item 
+Manager.\+cpp\end{DoxyCompactItemize}

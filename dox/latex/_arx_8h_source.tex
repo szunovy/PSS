@@ -1,8 +1,8 @@
 \hypertarget{_arx_8h_source}{}\doxysection{Arx.\+h}
-\mbox{\hyperlink{_arx_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_siso_8h}{Siso.h}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Siso.h"{}}}
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iomanip>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
@@ -13,104 +13,27 @@
 \DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_arx}{Arx}}\ :\ \mbox{\hyperlink{class_siso}{Siso}}\ \{}
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_arx}{Arx}}(\textcolor{keywordtype}{int}\ ndA,\ \textcolor{keywordtype}{int}\ ndB,\ \textcolor{keywordtype}{int}\ nk);}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_arx_a69166f2e8aa85dbb4b91d3c56344d7f1}{\string~Arx}}();}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arx_a9783b1acbf3417ea18298010e686c700}{setParameters}}(vector<double>\ A,\ vector<double>\ B);}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_arx_a90576cc710f726cdfa9475e16d6d1e20}{simulate}}(\textcolor{keywordtype}{double}\ input);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//double\ output;}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//double\ input;}}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//double\ noise;}}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arx_a0a8c816731e12f629da0272dd730f159}{dA}};\ \ \ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arx_abdf7413211e8ff1513028236cb759251}{dB}};\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arx_ab3c1530528ce155cb85f424e493f2a24}{k}};\ \ }
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00030\ \ \ \ \ vector<\ double\ >\ paramA;\ }
-\DoxyCodeLine{00031\ \ \ \ \ vector<\ double\ >\ paramB;\ }
-\DoxyCodeLine{00032\ \ \ \ \ vector<\ double\ >\ inputBuffer;\ }
-\DoxyCodeLine{00033\ \ \ \ \ vector<\ double\ >\ outputBuffer;\ }
-\DoxyCodeLine{00034\ \};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{comment}{//creating\ arrays\ of\ given\ size\ while\ initializing\ an\ object\ and\ filling\ them\ with\ zeroes}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00044\ \mbox{\hyperlink{class_arx_a45636126c0e5c043b9fb63f87c7a70a4}{Arx::Arx}}(\textcolor{keywordtype}{int}\ ndA,\ \textcolor{keywordtype}{int}\ ndB,\ \textcolor{keywordtype}{int}\ nk)}
-\DoxyCodeLine{00045\ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_arx_a0a8c816731e12f629da0272dd730f159}{dA}}\ =\ ndA;}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_arx_abdf7413211e8ff1513028236cb759251}{dB}}\ =\ ndB;}
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_arx_ab3c1530528ce155cb85f424e493f2a24}{k}}\ =\ nk;}
-\DoxyCodeLine{00049\ \ \ \ \ paramA.resize(ndA);}
-\DoxyCodeLine{00050\ \ \ \ \ paramB.resize(ndB);}
-\DoxyCodeLine{00051\ \ \ \ \ inputBuffer.resize(ndB\ +\ nk);}
-\DoxyCodeLine{00052\ \ \ \ \ outputBuffer.resize(ndA);}
-\DoxyCodeLine{00053\ \ \ \ \ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//paramA2\ =\ new\ double[ndA];}}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//paramB2\ =\ new\ double[ndB];}}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//inputBuffer2\ =\ new\ double[ndB\ +\ nk];}}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//outputBuffer2\ =\ new\ double[ndA];}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//fill\_n(paramA,\ ndA,\ 0);}}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//fill\_n(paramB,\ ndB,\ 0);}}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//fill\_n(inputBuffer,\ ndB\ +\ nk,\ 0);}}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//fill\_n(outputBuffer,\ ndA,\ 0);}}
-\DoxyCodeLine{00063\ \}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \mbox{\hyperlink{class_arx_a69166f2e8aa85dbb4b91d3c56344d7f1}{Arx::\string~Arx}}()\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//delete[]\ paramA;}}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//delete[]\ paramB;}}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//delete[]\ inputBuffer;}}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//delete[]\ outputBuffer;+}}
-\DoxyCodeLine{00070\ \}}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arx_a9783b1acbf3417ea18298010e686c700}{Arx::setParameters}}(vector<double>\ A,\ vector<double>\ B)}
-\DoxyCodeLine{00079\ \{}
-\DoxyCodeLine{00080\ \ \ \ \ paramA\ =\ A;}
-\DoxyCodeLine{00081\ \ \ \ \ paramB\ =\ B;}
-\DoxyCodeLine{00082\ \ \ \ \ }
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//for\ (int\ i\ =\ 0;\ i\ <\ A.size();\ i++)}}
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ \ paramA.push\_back(A[i]);}}
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//for\ (int\ i\ =\ 0;\ i\ <\ A.size();\ i++)}}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ \ paramB.push\_back(B[i]);}}
-\DoxyCodeLine{00087\ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \textcolor{comment}{//\ copying\ parameters}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ }
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00104\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_arx_a90576cc710f726cdfa9475e16d6d1e20}{Arx::simulate}}(\textcolor{keywordtype}{double}\ input)}
-\DoxyCodeLine{00105\ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{double}\ output\ =\ 0;}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//moving\ all\ the\ elements\ one\ position\ to\ ther\ right}}
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_arx_abdf7413211e8ff1513028236cb759251}{dB}}\ +\ \mbox{\hyperlink{class_arx_ab3c1530528ce155cb85f424e493f2a24}{k}}\ -\/\ 1;\ i\ >\ 0;\ i-\/-\/)}
-\DoxyCodeLine{00110\ \ \ \ \ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ inputBuffer[i]\ =\ inputBuffer[i\ -\/\ 1];}
-\DoxyCodeLine{00112\ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//setting\ input\ as\ first\ value\ in\ buffer\ and\ adding\ its\ part\ to\ output}}
-\DoxyCodeLine{00114\ \ \ \ \ inputBuffer[0]\ =\ input;}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//calculating\ part\ of\ output\ (minding\ the\ delay)}}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_arx_abdf7413211e8ff1513028236cb759251}{dB}};\ i++)}
-\DoxyCodeLine{00118\ \ \ \ \ \{}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ output\ +=\ inputBuffer[i\ +\ \mbox{\hyperlink{class_arx_ab3c1530528ce155cb85f424e493f2a24}{k}}]\ *\ paramB[i];}
-\DoxyCodeLine{00120\ \ \ \ \ \}}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//first\ calculating\ then\ moving\ one\ pos\ to\ the\ right,\ paramA\ starts\ from\ a1z\string^(-\/1)}}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{class_arx_a0a8c816731e12f629da0272dd730f159}{dA}}\ -\/\ 1;\ i\ >\ 0;\ i-\/-\/)}
-\DoxyCodeLine{00124\ \ \ \ \ \{}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ output\ -\/=\ outputBuffer[i]\ *\ paramA[i];}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ outputBuffer[i]\ =\ outputBuffer[i\ -\/\ 1];}
-\DoxyCodeLine{00127\ \ \ \ \ \}}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//add\ noise\ to\ the\ signal}}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{//output\ +=\ rand()\ \%\ 3;}}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \textcolor{comment}{//saving\ current\ output\ or\ next\ iterations}}
-\DoxyCodeLine{00132\ \ \ \ \ outputBuffer[0]\ =\ output;}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
-\DoxyCodeLine{00135\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_arx}{Arx}}(\textcolor{keywordtype}{int}\ ndA,\ \textcolor{keywordtype}{int}\ ndB,\ \textcolor{keywordtype}{int}\ nk);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_arx}{\string~Arx}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arx_a9783b1acbf3417ea18298010e686c700}{setParameters}}(vector<double>\ A,\ vector<double>\ B);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_arx_a90576cc710f726cdfa9475e16d6d1e20}{simulate}}(\textcolor{keywordtype}{double}\ input);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//double\ output;}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//double\ input;}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//double\ noise;}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arx_a0a8c816731e12f629da0272dd730f159}{dA}};\ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arx_abdf7413211e8ff1513028236cb759251}{dB}};\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_arx_ab3c1530528ce155cb85f424e493f2a24}{k}};\ \ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ vector<\ double\ >\ paramA;\ }
+\DoxyCodeLine{00055\ \ \ \ \ vector<\ double\ >\ paramB;\ }
+\DoxyCodeLine{00056\ \ \ \ \ vector<\ double\ >\ inputBuffer;\ }
+\DoxyCodeLine{00057\ \ \ \ \ vector<\ double\ >\ outputBuffer;\ }
+\DoxyCodeLine{00058\ \};}
 
 \end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{_manager_8h_source}{}\doxysection{Manager.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Exceptions.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <format>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_manager}{Manager}}\{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_manager_a1658ff9f18e38ccd9cb8b0b371b9c20b}{Manager}}();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//e.g\ }}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//a1\ a2\ a3\ ...;b0\ b1\ b2\ b3\ ...;nk\ \ \ \ \ \ \ //[model\ no.1]}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//a1\ a2\ a3...;b0\ b1\ b2\ b3...;nk\ \ \ \ \ \ \ \ \ //[model\ no.2]}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//...\ etc.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_manager_ac0035f7075f38c253cb59ec33d6be8ff}{ReadParametersFile}}(\textcolor{keywordtype}{int}\ modelNumber);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//void\ ReadParametersFile(int\ modelNumber,\ string\ path);}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ tuple<int,\ int,\ int>\ \mbox{\hyperlink{class_manager_a889d9799cfd44a7823922285b2725523}{getDegrees}}();}
+\DoxyCodeLine{00054\ \ \ \ \ vector<double>\ \mbox{\hyperlink{class_manager_aaa8ead650614de22bf5c1a092b65dd9a}{getA}}();}
+\DoxyCodeLine{00060\ \ \ \ \ vector<double>\ \mbox{\hyperlink{class_manager_ab484e135d98904b0ab40353cf5502f4f}{getB}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manager_afc8026640f0fbd1505118f52d29d35c9}{SaveToFile}}(\textcolor{keywordtype}{string}\ message);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_manager_afc8026640f0fbd1505118f52d29d35c9}{SaveToFile}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ vector<\ double\ >\ paramsA;\ }
+\DoxyCodeLine{00074\ \ \ \ \ vector<\ double\ >\ paramsB;\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ degreeA;\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ degreeB;\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ degreek;\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{char}\ fileName[80];\ }
+\DoxyCodeLine{00079\ \ \ \ \ ofstream\ outputFile;\ }
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+
+\end{DoxyCode}

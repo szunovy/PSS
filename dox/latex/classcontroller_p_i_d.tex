@@ -1,0 +1,111 @@
+\hypertarget{classcontroller_p_i_d}{}\doxysection{controller\+PID Class Reference}
+\label{classcontroller_p_i_d}\index{controllerPID@{controllerPID}}
+
+
+Class PID regulator.  
+
+
+
+
+{\ttfamily \#include $<$controller\+PID.\+h$>$}
+
+Inheritance diagram for controller\+PID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcontroller_p_i_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontroller_p_i_d_acddb8e0ae3ed66fe04f51e9f3f9788d7}{controller\+PID}} (double nP, double nI, double nD)
+\begin{DoxyCompactList}\small\item\em Constructor of PID regulator. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classcontroller_p_i_d_ab3e3d9e695a5e95276c91d4e867292d0}{simulate}} (double input)
+\begin{DoxyCompactList}\small\item\em Calculate response of regulator to the given error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a64d09815bd3713d283935d3d92296d7e}\label{classcontroller_p_i_d_a64d09815bd3713d283935d3d92296d7e}} 
+double {\bfseries output} = 0
+\begin{DoxyCompactList}\small\item\em Output of regulator to be returned. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a9fc59df4c3866c2dee479c8ee72998c7}\label{classcontroller_p_i_d_a9fc59df4c3866c2dee479c8ee72998c7}} 
+double {\bfseries P}
+\begin{DoxyCompactList}\small\item\em Proportional Gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a96909891a78814d855a7d35dd155aaea}\label{classcontroller_p_i_d_a96909891a78814d855a7d35dd155aaea}} 
+double {\bfseries I}
+\begin{DoxyCompactList}\small\item\em Integral Gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_aac622130c84399e277dd970f80c53bdb}\label{classcontroller_p_i_d_aac622130c84399e277dd970f80c53bdb}} 
+double {\bfseries D}
+\begin{DoxyCompactList}\small\item\em Derivative Gain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_ad4cd46917c38062f05f09ab6f312c0ec}\label{classcontroller_p_i_d_ad4cd46917c38062f05f09ab6f312c0ec}} 
+double {\bfseries integral} = 0
+\begin{DoxyCompactList}\small\item\em Value of calulated integral. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a8a76d8e967e9db4e805d52336b8de848}\label{classcontroller_p_i_d_a8a76d8e967e9db4e805d52336b8de848}} 
+double {\bfseries derivative} = 0
+\begin{DoxyCompactList}\small\item\em Value of calculated derivative. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_aacbe9a92bd91f12c0811f59200a79be3}\label{classcontroller_p_i_d_aacbe9a92bd91f12c0811f59200a79be3}} 
+double {\bfseries dt} = 0.\+01
+\begin{DoxyCompactList}\small\item\em sampling itme \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a6e637666363ade39ee231dd98466f004}\label{classcontroller_p_i_d_a6e637666363ade39ee231dd98466f004}} 
+double {\bfseries prev\+Error} = 0
+\begin{DoxyCompactList}\small\item\em Value for storing previous error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a36c220aed809e9777d692723bfff50b9}\label{classcontroller_p_i_d_a36c220aed809e9777d692723bfff50b9}} 
+int {\bfseries MAX} = 1000000
+\item 
+\mbox{\Hypertarget{classcontroller_p_i_d_a3c7d5efa522e97d2e2f4d0e2535cb4eb}\label{classcontroller_p_i_d_a3c7d5efa522e97d2e2f4d0e2535cb4eb}} 
+int {\bfseries MIN} = -\/1000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class PID regulator. 
+
+Depending on set parameters works as P, PI, PD, PID. Set values to desirde parts and leave rest as 0 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcontroller_p_i_d_acddb8e0ae3ed66fe04f51e9f3f9788d7}\label{classcontroller_p_i_d_acddb8e0ae3ed66fe04f51e9f3f9788d7}} 
+\index{controllerPID@{controllerPID}!controllerPID@{controllerPID}}
+\index{controllerPID@{controllerPID}!controllerPID@{controllerPID}}
+\doxysubsubsection{\texorpdfstring{controllerPID()}{controllerPID()}}
+{\footnotesize\ttfamily controller\+PID\+::controller\+PID (\begin{DoxyParamCaption}\item[{double}]{nP,  }\item[{double}]{nI,  }\item[{double}]{nD }\end{DoxyParamCaption})}
+
+
+
+Constructor of PID regulator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nP} & Proportional Gain\\
+\hline
+{\em nI} & Integral Gain\\
+\hline
+{\em nD} & Derivative Gain\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcontroller_p_i_d_ab3e3d9e695a5e95276c91d4e867292d0}\label{classcontroller_p_i_d_ab3e3d9e695a5e95276c91d4e867292d0}} 
+\index{controllerPID@{controllerPID}!simulate@{simulate}}
+\index{simulate@{simulate}!controllerPID@{controllerPID}}
+\doxysubsubsection{\texorpdfstring{simulate()}{simulate()}}
+{\footnotesize\ttfamily double controller\+PID\+::simulate (\begin{DoxyParamCaption}\item[{double}]{input }\end{DoxyParamCaption})}
+
+
+
+Calculate response of regulator to the given error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Error, input signal for regulator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output value of regulator
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+controller\+PID.\+h\item 
+Controller\+PID.\+cpp\end{DoxyCompactItemize}

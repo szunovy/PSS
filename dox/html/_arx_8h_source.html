@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PSS: Arx.h Source File</title>
+<title>My Project: Arx.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -30,22 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PSS
+   <div id="projectname">My Project
    </div>
-   <div id="projectbrief">Lab project PSS</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -57,6 +39,17 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -99,8 +92,8 @@ $(document).ready(function(){initNavTree('_arx_8h_source.html',''); initResizabl
   <div class="headertitle"><div class="title">Arx.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_arx_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_siso_8h.html">Siso.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Siso.h&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
@@ -111,121 +104,41 @@ $(document).ready(function(){initNavTree('_arx_8h_source.html',''); initResizabl
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_arx.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_arx.html">Arx</a> : <a class="code hl_class" href="class_siso.html">Siso</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_arx.html">Arx</a>(<span class="keywordtype">int</span> ndA, <span class="keywordtype">int</span> ndB, <span class="keywordtype">int</span> nk);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_function" href="class_arx.html#a69166f2e8aa85dbb4b91d3c56344d7f1">~Arx</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_arx.html#a9783b1acbf3417ea18298010e686c700">setParameters</a>(vector&lt;double&gt; A, vector&lt;double&gt; B);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_arx.html#a90576cc710f726cdfa9475e16d6d1e20">simulate</a>(<span class="keywordtype">double</span> input);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">//double output;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">//double input;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//double noise;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_arx.html#a0a8c816731e12f629da0272dd730f159">   25</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_arx.html#a0a8c816731e12f629da0272dd730f159">dA</a>; </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_arx.html#abdf7413211e8ff1513028236cb759251">   26</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_arx.html#abdf7413211e8ff1513028236cb759251">dB</a>; </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">k</a>;  </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    vector&lt; double &gt; paramA; </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    vector&lt; double &gt; paramB; </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    vector&lt; double &gt; inputBuffer; </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    vector&lt; double &gt; outputBuffer; </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//creating arrays of given size while initializing an object and filling them with zeroes</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_arx.html#a45636126c0e5c043b9fb63f87c7a70a4">   44</a></span><a class="code hl_function" href="class_arx.html#a45636126c0e5c043b9fb63f87c7a70a4">Arx::Arx</a>(<span class="keywordtype">int</span> ndA, <span class="keywordtype">int</span> ndB, <span class="keywordtype">int</span> nk)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_variable" href="class_arx.html#a0a8c816731e12f629da0272dd730f159">dA</a> = ndA;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_variable" href="class_arx.html#abdf7413211e8ff1513028236cb759251">dB</a> = ndB;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_variable" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">k</a> = nk;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    paramA.resize(ndA);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    paramB.resize(ndB);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    inputBuffer.resize(ndB + nk);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    outputBuffer.resize(ndA);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">//paramA2 = new double[ndA];</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">//paramB2 = new double[ndB];</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">//inputBuffer2 = new double[ndB + nk];</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">//outputBuffer2 = new double[ndA];</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">//fill_n(paramA, ndA, 0);</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">//fill_n(paramB, ndB, 0);</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">//fill_n(inputBuffer, ndB + nk, 0);</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">//fill_n(outputBuffer, ndA, 0);</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_arx.html#a69166f2e8aa85dbb4b91d3c56344d7f1">   65</a></span><a class="code hl_function" href="class_arx.html#a69166f2e8aa85dbb4b91d3c56344d7f1">Arx::~Arx</a>() {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">//delete[] paramA;</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">//delete[] paramB;</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">//delete[] inputBuffer;</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">//delete[] outputBuffer;+</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_arx.html#a9783b1acbf3417ea18298010e686c700">   78</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_arx.html#a9783b1acbf3417ea18298010e686c700">Arx::setParameters</a>(vector&lt;double&gt; A, vector&lt;double&gt; B)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    paramA = A;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    paramB = B;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">//for (int i = 0; i &lt; A.size(); i++)</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">//  paramA.push_back(A[i]);</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">//for (int i = 0; i &lt; A.size(); i++)</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">//  paramB.push_back(B[i]);</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">// copying parameters</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_arx.html#a90576cc710f726cdfa9475e16d6d1e20">  104</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="class_arx.html#a90576cc710f726cdfa9475e16d6d1e20">Arx::simulate</a>(<span class="keywordtype">double</span> input)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">double</span> output = 0;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">//moving all the elements one position to ther right</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="class_arx.html#abdf7413211e8ff1513028236cb759251">dB</a> + <a class="code hl_variable" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">k</a> - 1; i &gt; 0; i--)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        inputBuffer[i] = inputBuffer[i - 1];</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">//setting input as first value in buffer and adding its part to output</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    inputBuffer[0] = input;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">//calculating part of output (minding the delay)</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_arx.html#abdf7413211e8ff1513028236cb759251">dB</a>; i++)</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        output += inputBuffer[i + <a class="code hl_variable" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">k</a>] * paramB[i];</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">//first calculating then moving one pos to the right, paramA starts from a1z^(-1)</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="class_arx.html#a0a8c816731e12f629da0272dd730f159">dA</a> - 1; i &gt; 0; i--)</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        output -= outputBuffer[i] * paramA[i];</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        outputBuffer[i] = outputBuffer[i - 1];</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">//add noise to the signal</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">//output += rand() % 3;</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">//saving current output or next iterations</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    outputBuffer[0] = output;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">return</span> output;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
-<div class="ttc" id="a_siso_8h_html"><div class="ttname"><a href="_siso_8h.html">Siso.h</a></div></div>
-<div class="ttc" id="aclass_arx_html"><div class="ttname"><a href="class_arx.html">Arx</a></div><div class="ttdoc">Class of ArX model.</div><div class="ttdef"><b>Definition:</b> Arx.h:13</div></div>
-<div class="ttc" id="aclass_arx_html_a0a8c816731e12f629da0272dd730f159"><div class="ttname"><a href="class_arx.html#a0a8c816731e12f629da0272dd730f159">Arx::dA</a></div><div class="ttdeci">int dA</div><div class="ttdoc">order of polynomial A</div><div class="ttdef"><b>Definition:</b> Arx.h:25</div></div>
-<div class="ttc" id="aclass_arx_html_a45636126c0e5c043b9fb63f87c7a70a4"><div class="ttname"><a href="class_arx.html#a45636126c0e5c043b9fb63f87c7a70a4">Arx::Arx</a></div><div class="ttdeci">Arx(int ndA, int ndB, int nk)</div><div class="ttdoc">Constructor of Arx class.</div><div class="ttdef"><b>Definition:</b> Arx.h:44</div></div>
-<div class="ttc" id="aclass_arx_html_a69166f2e8aa85dbb4b91d3c56344d7f1"><div class="ttname"><a href="class_arx.html#a69166f2e8aa85dbb4b91d3c56344d7f1">Arx::~Arx</a></div><div class="ttdeci">~Arx()</div><div class="ttdef"><b>Definition:</b> Arx.h:65</div></div>
-<div class="ttc" id="aclass_arx_html_a90576cc710f726cdfa9475e16d6d1e20"><div class="ttname"><a href="class_arx.html#a90576cc710f726cdfa9475e16d6d1e20">Arx::simulate</a></div><div class="ttdeci">double simulate(double input)</div><div class="ttdoc">Simulating output of the Arx model.</div><div class="ttdef"><b>Definition:</b> Arx.h:104</div></div>
-<div class="ttc" id="aclass_arx_html_a9783b1acbf3417ea18298010e686c700"><div class="ttname"><a href="class_arx.html#a9783b1acbf3417ea18298010e686c700">Arx::setParameters</a></div><div class="ttdeci">void setParameters(vector&lt; double &gt; A, vector&lt; double &gt; B)</div><div class="ttdoc">Set values of models parameters.</div><div class="ttdef"><b>Definition:</b> Arx.h:78</div></div>
-<div class="ttc" id="aclass_arx_html_ab3c1530528ce155cb85f424e493f2a24"><div class="ttname"><a href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">Arx::k</a></div><div class="ttdeci">int k</div><div class="ttdoc">input output delay</div><div class="ttdef"><b>Definition:</b> Arx.h:27</div></div>
-<div class="ttc" id="aclass_arx_html_abdf7413211e8ff1513028236cb759251"><div class="ttname"><a href="class_arx.html#abdf7413211e8ff1513028236cb759251">Arx::dB</a></div><div class="ttdeci">int dB</div><div class="ttdoc">order of polynomial B</div><div class="ttdef"><b>Definition:</b> Arx.h:26</div></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_arx.html">Arx</a>(<span class="keywordtype">int</span> ndA, <span class="keywordtype">int</span> ndB, <span class="keywordtype">int</span> nk);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="class_arx.html">~Arx</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_arx.html#a9783b1acbf3417ea18298010e686c700">setParameters</a>(vector&lt;double&gt; A, vector&lt;double&gt; B);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_arx.html#a90576cc710f726cdfa9475e16d6d1e20">simulate</a>(<span class="keywordtype">double</span> input);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">//double output;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">//double input;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">//double noise;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_arx.html#a0a8c816731e12f629da0272dd730f159">   49</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_arx.html#a0a8c816731e12f629da0272dd730f159">dA</a>; </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_arx.html#abdf7413211e8ff1513028236cb759251">   50</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_arx.html#abdf7413211e8ff1513028236cb759251">dB</a>; </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">   51</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">k</a>;  </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    vector&lt; double &gt; paramA; </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    vector&lt; double &gt; paramB; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    vector&lt; double &gt; inputBuffer; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    vector&lt; double &gt; outputBuffer; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="ttc" id="aclass_arx_html"><div class="ttname"><a href="class_arx.html">Arx</a></div><div class="ttdef"><b>Definition:</b> Arx.h:13</div></div>
+<div class="ttc" id="aclass_arx_html_a0a8c816731e12f629da0272dd730f159"><div class="ttname"><a href="class_arx.html#a0a8c816731e12f629da0272dd730f159">Arx::dA</a></div><div class="ttdeci">int dA</div><div class="ttdoc">order of polynomial A</div><div class="ttdef"><b>Definition:</b> Arx.h:49</div></div>
+<div class="ttc" id="aclass_arx_html_a90576cc710f726cdfa9475e16d6d1e20"><div class="ttname"><a href="class_arx.html#a90576cc710f726cdfa9475e16d6d1e20">Arx::simulate</a></div><div class="ttdeci">double simulate(double input)</div><div class="ttdoc">Simulating output of the Arx model.</div><div class="ttdef"><b>Definition:</b> Arx.cpp:24</div></div>
+<div class="ttc" id="aclass_arx_html_a9783b1acbf3417ea18298010e686c700"><div class="ttname"><a href="class_arx.html#a9783b1acbf3417ea18298010e686c700">Arx::setParameters</a></div><div class="ttdeci">void setParameters(vector&lt; double &gt; A, vector&lt; double &gt; B)</div><div class="ttdoc">Set values of models parameters.</div><div class="ttdef"><b>Definition:</b> Arx.cpp:18</div></div>
+<div class="ttc" id="aclass_arx_html_ab3c1530528ce155cb85f424e493f2a24"><div class="ttname"><a href="class_arx.html#ab3c1530528ce155cb85f424e493f2a24">Arx::k</a></div><div class="ttdeci">int k</div><div class="ttdoc">input output delay</div><div class="ttdef"><b>Definition:</b> Arx.h:51</div></div>
+<div class="ttc" id="aclass_arx_html_abdf7413211e8ff1513028236cb759251"><div class="ttname"><a href="class_arx.html#abdf7413211e8ff1513028236cb759251">Arx::dB</a></div><div class="ttdeci">int dB</div><div class="ttdoc">order of polynomial B</div><div class="ttdef"><b>Definition:</b> Arx.h:50</div></div>
 <div class="ttc" id="aclass_siso_html"><div class="ttname"><a href="class_siso.html">Siso</a></div><div class="ttdoc">Siso class, a parent for other objects.</div><div class="ttdef"><b>Definition:</b> Siso.h:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_arx_8h.html">Arx.h</a></li>
+    <li class="navelem"><b>Arx.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

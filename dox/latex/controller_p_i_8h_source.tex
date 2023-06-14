@@ -1,0 +1,46 @@
+\hypertarget{controller_p_i_8h_source}{}\doxysection{controller\+PI.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Regulator.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Siso.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//srand(time(NULL));}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcontroller_p}{controllerP}}\ :\ \mbox{\hyperlink{class_regulator}{Regulator}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classcontroller_p}{controllerP}}(\textcolor{keywordtype}{double}\ nP);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classcontroller_p}{\string~controllerP}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{double}\ simulate(\textcolor{keywordtype}{double}\ input);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ output;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ P;}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ controllerP::controllerP(\textcolor{keywordtype}{double}\ nP)}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ P\ =\ nP;}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ controllerP::\string~controllerP()\ \{}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{double}\ controllerP::simulate(\textcolor{keywordtype}{double}\ input)}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ output\ =\ P\ *\ input;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ output;}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}

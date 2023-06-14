@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['input_5fparams_5fmax_5flength_0',['INPUT_PARAMS_MAX_LENGTH',['../_p_s_s_8cpp.html#a6b9532e583c38aca61b96f94c8ab8d7a',1,'PSS.cpp']]]
+  ['i_0',['I',['../classcontroller_p_i_d.html#a96909891a78814d855a7d35dd155aaea',1,'controllerPID']]],
+  ['integral_1',['integral',['../classcontroller_p_i_d.html#ad4cd46917c38062f05f09ab6f312c0ec',1,'controllerPID']]]
 ];

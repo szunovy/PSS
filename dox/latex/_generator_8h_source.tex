@@ -1,0 +1,46 @@
+\hypertarget{_generator_8h_source}{}\doxysection{Generator.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Siso.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Exceptions.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <strstream>}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00011\ \textcolor{comment}{//srand(time(NULL));}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_generator}{Generator}}\ :\ \mbox{\hyperlink{class_siso}{Siso}}\ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_generator}{Generator}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_generator}{\string~Generator}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_generator_a7bd07fdb6e1fb5de463d1b946c753a76}{generate}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generator_a911ed3a44914ff5997dbe2f56760dd58}{Kronecker}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generator_a77186546b9c983a5a168ff263c20afe6}{Sinus}}(\textcolor{keywordtype}{double}\ nsinAmp,\ \textcolor{keywordtype}{double}\ nsinFreq);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generator_ae9df08c12c30e8cd38b1321158819a25}{Rectangle}}(\textcolor{keywordtype}{double}\ nrectAmp,\ \textcolor{keywordtype}{double}\ nrectFreq);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_generator_ae9bf4c3a7be37fa7968de2dbe307ffc4}{Noise}}(\textcolor{keywordtype}{double}\ nnoiseVar);}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//int\ type;\ ///<\ type\ of\ generated\ signal}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//double\ par1;\ ///<\ value\ of\ first\ parameter}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//double\ par2;\ \ ///<\ value\ of\ seond\ parameter}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ step;\ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ output;\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ sign;\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ kronecker;\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{double}\ sinAmp;\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ sinFreq;\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ rectAmp;\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ rectFreq;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ noiseVar;\ }
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

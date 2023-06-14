@@ -18,6 +18,21 @@
     <ClCompile Include="PSS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Manager.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Arx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Generator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControllerPID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arx.h">
@@ -29,7 +44,13 @@
     <ClInclude Include="Siso.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="controllerP.h">
+    <ClInclude Include="controllerPID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Generator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -127,11 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arx.cpp" />
+    <ClCompile Include="ControllerPID.cpp" />
+    <ClCompile Include="Generator.cpp" />
+    <ClCompile Include="Manager.cpp" />
+    <ClCompile Include="Manager.h" />
     <ClCompile Include="PSS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arx.h" />
-    <ClInclude Include="controllerP.h" />
+    <ClInclude Include="controllerPID.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="Generator.h" />
     <ClInclude Include="Regulator.h" />
     <ClInclude Include="Siso.h" />
   </ItemGroup>

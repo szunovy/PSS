@@ -2,11 +2,6 @@
 \label{class_arx}\index{Arx@{Arx}}
 
 
-Class of ArX model.  
-
-
-
-
 {\ttfamily \#include $<$Arx.\+h$>$}
 
 Inheritance diagram for Arx\+:\begin{figure}[H]
@@ -20,8 +15,6 @@ Inheritance diagram for Arx\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_arx_a45636126c0e5c043b9fb63f87c7a70a4}{Arx}} (int ndA, int ndB, int nk)
 \begin{DoxyCompactList}\small\item\em Constructor of \mbox{\hyperlink{class_arx}{Arx}} class. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_arx_a69166f2e8aa85dbb4b91d3c56344d7f1}{$\sim$\+Arx}} ()
-\item 
 void \mbox{\hyperlink{class_arx_a9783b1acbf3417ea18298010e686c700}{set\+Parameters}} (vector$<$ double $>$ A, vector$<$ double $>$ B)
 \begin{DoxyCompactList}\small\item\em Set values of models parameters. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_arx_a90576cc710f726cdfa9475e16d6d1e20}{simulate}} (double input)
@@ -29,16 +22,19 @@ double \mbox{\hyperlink{class_arx_a90576cc710f726cdfa9475e16d6d1e20}{simulate}} 
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{class_arx_a0a8c816731e12f629da0272dd730f159}{dA}}
+\mbox{\Hypertarget{class_arx_a0a8c816731e12f629da0272dd730f159}\label{class_arx_a0a8c816731e12f629da0272dd730f159}} 
+int {\bfseries dA}
 \begin{DoxyCompactList}\small\item\em order of polynomial A \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_arx_abdf7413211e8ff1513028236cb759251}{dB}}
+\mbox{\Hypertarget{class_arx_abdf7413211e8ff1513028236cb759251}\label{class_arx_abdf7413211e8ff1513028236cb759251}} 
+int {\bfseries dB}
 \begin{DoxyCompactList}\small\item\em order of polynomial B \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_arx_ab3c1530528ce155cb85f424e493f2a24}{k}}
+\mbox{\Hypertarget{class_arx_ab3c1530528ce155cb85f424e493f2a24}\label{class_arx_ab3c1530528ce155cb85f424e493f2a24}} 
+int {\bfseries k}
 \begin{DoxyCompactList}\small\item\em input output delay \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class of ArX model. 
+Class of ArX model.
 
 Class for creating arx models of objects. 
 
@@ -62,12 +58,6 @@ Constructor of \mbox{\hyperlink{class_arx}{Arx}} class.
 {\em nk} & input-\/output delay\\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_arx_a69166f2e8aa85dbb4b91d3c56344d7f1}\label{class_arx_a69166f2e8aa85dbb4b91d3c56344d7f1}} 
-\index{Arx@{Arx}!````~Arx@{$\sim$Arx}}
-\index{````~Arx@{$\sim$Arx}!Arx@{Arx}}
-\doxysubsubsection{\texorpdfstring{$\sim$Arx()}{~Arx()}}
-{\footnotesize\ttfamily Arx\+::$\sim$\+Arx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
 
 
 \doxysubsection{Member Function Documentation}
@@ -113,34 +103,7 @@ Output of the model $<$doublel$>$
 \end{DoxyReturn}
 
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_arx_a0a8c816731e12f629da0272dd730f159}\label{class_arx_a0a8c816731e12f629da0272dd730f159}} 
-\index{Arx@{Arx}!dA@{dA}}
-\index{dA@{dA}!Arx@{Arx}}
-\doxysubsubsection{\texorpdfstring{dA}{dA}}
-{\footnotesize\ttfamily int Arx\+::dA\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-order of polynomial A 
-
-\mbox{\Hypertarget{class_arx_abdf7413211e8ff1513028236cb759251}\label{class_arx_abdf7413211e8ff1513028236cb759251}} 
-\index{Arx@{Arx}!dB@{dB}}
-\index{dB@{dB}!Arx@{Arx}}
-\doxysubsubsection{\texorpdfstring{dB}{dB}}
-{\footnotesize\ttfamily int Arx\+::dB\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-order of polynomial B 
-
-\mbox{\Hypertarget{class_arx_ab3c1530528ce155cb85f424e493f2a24}\label{class_arx_ab3c1530528ce155cb85f424e493f2a24}} 
-\index{Arx@{Arx}!k@{k}}
-\index{k@{k}!Arx@{Arx}}
-\doxysubsubsection{\texorpdfstring{k}{k}}
-{\footnotesize\ttfamily int Arx\+::k\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-input output delay 
-
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Arx.\+h\item 
+Arx.\+cpp\end{DoxyCompactItemize}

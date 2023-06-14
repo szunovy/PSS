@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['arx_0',['Arx',['../class_arx.html',1,'Arx'],['../class_arx.html#a45636126c0e5c043b9fb63f87c7a70a4',1,'Arx::Arx()']]],
-  ['arx_2eh_1',['Arx.h',['../_arx_8h.html',1,'']]]
+  ['controllerp_0',['controllerP',['../classcontroller_p.html',1,'']]],
+  ['controllerpid_1',['controllerPID',['../classcontroller_p_i_d.html',1,'controllerPID'],['../classcontroller_p_i_d.html#acddb8e0ae3ed66fe04f51e9f3f9788d7',1,'controllerPID::controllerPID()']]]
 ];

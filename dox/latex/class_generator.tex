@@ -1,0 +1,102 @@
+\hypertarget{class_generator}{}\doxysection{Generator Class Reference}
+\label{class_generator}\index{Generator@{Generator}}
+
+
+{\ttfamily \#include $<$Generator.\+h$>$}
+
+Inheritance diagram for Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_generator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_generator_a7bd07fdb6e1fb5de463d1b946c753a76}{generate}} ()
+\begin{DoxyCompactList}\small\item\em Calculates sum of desired signals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_generator_a911ed3a44914ff5997dbe2f56760dd58}\label{class_generator_a911ed3a44914ff5997dbe2f56760dd58}} 
+void {\bfseries Kronecker} ()
+\begin{DoxyCompactList}\small\item\em Enabling Kronoecker signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generator_a77186546b9c983a5a168ff263c20afe6}{Sinus}} (double nsin\+Amp, double nsin\+Freq)
+\begin{DoxyCompactList}\small\item\em Enabling and setting parameters of sine wave. To disable set parameters to 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generator_ae9df08c12c30e8cd38b1321158819a25}{Rectangle}} (double nrect\+Amp, double nrect\+Freq)
+\begin{DoxyCompactList}\small\item\em Enabling and setting parameters of rectangle wave. To disable set parameters to 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generator_ae9bf4c3a7be37fa7968de2dbe307ffc4}{Noise}} (double nnoise\+Var)
+\begin{DoxyCompactList}\small\item\em Enabling noise signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class of generator.
+
+Class for generating excitacion signal. Outputs sum of enabled signals. Signals are enabled and set by using appropriate method. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_generator_a7bd07fdb6e1fb5de463d1b946c753a76}\label{class_generator_a7bd07fdb6e1fb5de463d1b946c753a76}} 
+\index{Generator@{Generator}!generate@{generate}}
+\index{generate@{generate}!Generator@{Generator}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily double Generator\+::generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates sum of desired signals. 
+
+\begin{DoxyReturn}{Returns}
+Sum of enabled signals
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_generator_ae9bf4c3a7be37fa7968de2dbe307ffc4}\label{class_generator_ae9bf4c3a7be37fa7968de2dbe307ffc4}} 
+\index{Generator@{Generator}!Noise@{Noise}}
+\index{Noise@{Noise}!Generator@{Generator}}
+\doxysubsubsection{\texorpdfstring{Noise()}{Noise()}}
+{\footnotesize\ttfamily void Generator\+::\+Noise (\begin{DoxyParamCaption}\item[{double}]{nnoise\+Var }\end{DoxyParamCaption})}
+
+
+
+Enabling noise signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nnoise\+Var} & noise variation\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_generator_ae9df08c12c30e8cd38b1321158819a25}\label{class_generator_ae9df08c12c30e8cd38b1321158819a25}} 
+\index{Generator@{Generator}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Generator@{Generator}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}}
+{\footnotesize\ttfamily void Generator\+::\+Rectangle (\begin{DoxyParamCaption}\item[{double}]{nrect\+Amp,  }\item[{double}]{nrect\+Freq }\end{DoxyParamCaption})}
+
+
+
+Enabling and setting parameters of rectangle wave. To disable set parameters to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nsin\+Amp} & Amplitude of sine wave\\
+\hline
+{\em nsin\+Freq} & Frequency of sine wave\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_generator_a77186546b9c983a5a168ff263c20afe6}\label{class_generator_a77186546b9c983a5a168ff263c20afe6}} 
+\index{Generator@{Generator}!Sinus@{Sinus}}
+\index{Sinus@{Sinus}!Generator@{Generator}}
+\doxysubsubsection{\texorpdfstring{Sinus()}{Sinus()}}
+{\footnotesize\ttfamily void Generator\+::\+Sinus (\begin{DoxyParamCaption}\item[{double}]{nsin\+Amp,  }\item[{double}]{nsin\+Freq }\end{DoxyParamCaption})}
+
+
+
+Enabling and setting parameters of sine wave. To disable set parameters to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nsin\+Amp} & Amplitude of sine wave\\
+\hline
+{\em nsin\+Freq} & Frequency of sine wave\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Generator.\+h\item 
+Generator.\+cpp\end{DoxyCompactItemize}
