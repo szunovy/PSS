@@ -44,7 +44,7 @@ int main()
 	int stopTime = 20; //stop time of simulation, amount of steps/ set to -1 to drive infinitely 
 	double SP = 5;	//setpoint
 	double error = 0; //error in the loop
-	double input = 0;
+	double input = 0; //input to the ARX object, (output of the regulator when present)
 
 	Manager FileManager;	//initializing filemanager
 	if(not FileManager.ReadParametersFile(1)) //assuring that parameters reading goes without error

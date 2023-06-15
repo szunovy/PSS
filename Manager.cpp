@@ -22,8 +22,6 @@ int Manager::ReadParametersFile(int modelNumber)
 	string line_pk;
 	int lineno = 0; //variable indicating number of current loaded line
 
-
-
 	//obtaining three groups of parameters separated with semicolon (A;B;nk)
 	//getting params from txt file line by line until getting desired model number, each line is a new model
 	//params sets are separated by semicolon, and each parameter is separated by whitespace
@@ -106,19 +104,10 @@ vector<double> Manager::getB()
 
 void Manager::SaveToFile(string message)
 {
-	//cout<<buffer<<endl;
-	//cout << strftime("%Y-%m-%dT%H-%M-%S.txt", timeinfo) << endl;
-	//outputFile.open(buffer, 'a');
 	outputFile << message << endl;
-	//outputFile.close();
-
 }
 
 void Manager::SaveToFile(double value)
 {
-	//cout<<buffer<<endl;
-	//cout << strftime("%Y-%m-%dT%H-%M-%S.txt", timeinfo) << endl;
-	//outputFile.open(buffer, 'a');
 	outputFile << value << endl;
-	//outputFile.close();
 }
