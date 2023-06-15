@@ -35,65 +35,62 @@ int main()
 {
 	srand(time(NULL));
 
-	int degA, degB, degk;
+	int degA, degB, degk; //degrees of polynomials and delay
 	double x, y;
-	vector< double > A; 
-	vector< double > B;
+	vector< double > A;  //polynomial parameters
+	vector< double > B; //polynomial parameters
+	double output = 0;  //output of the ARX model
+	int simTime = 0;	//incremented simulation time (Steps)
+	int stopTime = 20; //stop time of simulation, amount of steps/ set to -1 to drive infinitely 
+	double SP = 5;	//setpoint
+	double error = 0; //error in the loop
+	double input = 0;
 
-	Manager FileManager;
-	if(not FileManager.ReadParametersFile(1))
+	Manager FileManager;	//initializing filemanager
+	if(not FileManager.ReadParametersFile(1)) //assuring that parameters reading goes without error
 	{
 		return 0;
 	}
 	
-	tie(degA, degB, degk) = FileManager.getDegrees();
-	Arx modelArx(degA, degB, degk);
+	tie(degA, degB, degk) = FileManager.getDegrees(); //obtaining and unpacking tuple of degrees
+	Arx modelArx(degA, degB, degk); //initializing ARX model object
+	modelArx.setParameters(FileManager.getA(), FileManager.getB()); //setting arx polynomials
 
-	modelArx.setParameters(FileManager.getA(), FileManager.getB());
-
-	double output = 0;
-	int simTime = 0;
-	int stopTime = 20;
-
-	//Generator generator("kronecker", 1 , 1);
 	controllerPID controller(1, 1, 0.5);
 	Generator signalgenerator;
-	//signalgenerator.Sinus(2, 10);
-	signalgenerator.Kronecker();
+
+	signalgenerator.Kronecker(); //enabling kronecker signal
 	signalgenerator.Sinus(10, 10);
 
-	double SP = 5;
-	double error = 0;
+
 
 	while (1)
-	//while(1)
 	{
-		////x = rand() % 5;
-		//x = 3;
-		//try 
-		//{
-		//	output = modelArx.simulate(x);
-		//	if (abs(output) > OBJECT_OUTPUT_LIMIT) { throw UnstableObj("Object unstable, output values exceeded limit."); }
-		//}
-		//catch(UnstableObj)
-		//{
-		//	//printing message and stopping the simulation
-		//	cout << "Object unstable, output values exceeded limit." << endl;
-		//	output_file << "Object unstable, output values exceeded limit." << endl;
-		//	break;
-		//}
-		//output_file << output << endl;
+		try 
+		{
+			//put the simulation of the control system here
 
-		////cout << output;
-		////cout << endl;
+			error = SP - output;
+			input = controller.simulate(error);
+			output = modelArx.simulate(input);
 
-		error = SP - output;
 
-		output = controller.simulate(error);
 
-		output = signalgenerator.generate();
-		cout << output << endl;
-		FileManager.SaveToFile(output);
+			if (abs(output) > OBJECT_OUTPUT_LIMIT) { throw UnstableObj("Object unstable, output values exceeded limit.");}
+
+			cout << output << endl;
+			FileManager.SaveToFile(output);
+
+		}
+		catch(UnstableObj)
+		{
+			//printing message and stopping the simulation
+			cout << "Object unstable, output values exceeded limit." << endl; //possible printing message to txt file with Manager.SaveToFile
+			break;
+		}
+
+
+
 		simTime++;
 		if (simTime == 20) { break; }
 	}
