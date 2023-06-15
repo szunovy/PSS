@@ -26,7 +26,7 @@
 using namespace std;
 
 const int INPUT_PARAMS_MAX_LENGTH = 30;
-const int OBJECT_OUTPUT_LIMIT = 1000000;
+const int OBJECT_OUTPUT_LIMIT = 100000000;
 
 
 
@@ -84,12 +84,10 @@ int main()
 		}
 		catch(UnstableObj)
 		{
-			//printing message and stopping the simulation
-			cout << "Object unstable, output values exceeded limit." << endl; //possible printing message to txt file with Manager.SaveToFile
+			//printing message and stopping the simulation, its possible to print message to txt file calling Menager.SaveToFile()
+			cout << "Object unstable, output values exceeded limit." << endl; 
 			break;
 		}
-
-
 
 		simTime++;
 		if (simTime == 20) { break; }
